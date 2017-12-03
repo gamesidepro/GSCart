@@ -1,0 +1,2 @@
+# GSCart
+GameSide Cart plugin
