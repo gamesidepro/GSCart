@@ -69,7 +69,7 @@ public class CartExecutor implements CommandExecutor{
                                 }
 
                                 if(userID!=-1){
-                                    ArrayList isInUserINV = GSCart.instance.getDb().isInUserInv(getItemIdInShop+"", userID+"");
+                                    ArrayList isInUserINV = GSCart.instance.getDb().isInUserInv(userID+"", getItemIdInShop+"");
                                     if(isInUserINV.isEmpty()){
                                         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
                                         String NOW = timestamp.toString();
@@ -78,7 +78,7 @@ public class CartExecutor implements CommandExecutor{
                                     }else{
                                         GSCart.instance.getDb().getResultSet("UPDATE `gs_user_inventory` SET `amount`=`amount`+'"+amount+"' WHERE `user_id`='"+userID+"' AND `item_id`='"+getItemIdInShop+"'");
                                     }
-                                    utils.sendMessage(player, TextColors.GREEN, "[Игровая Сторона] ", TextColors.WHITE, " Вещи успешно телепортировались в ваш инвентарь на сайте!");    
+                                    utils.sendMessage(player, TextColors.GREEN, "[Игровая Сторона] ", TextColors.WHITE, " Вещи успешно перенесены в ваш инвентарь на сайте!");
                                 }
 
 

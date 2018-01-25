@@ -74,7 +74,7 @@ public class GSCart {
 	    instance = this;
 	    logger.info("Loading GameSide Stats plugin...");
 	}
-    	@Listener
+	@Listener
 	public void onInit(GameInitializationEvent event) {
 		ConfigurationManager.getInstance().setup(configFile, configManager);
                 
